@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="e28week3.js" defer></script>
+    <style>
+        [v-cloak] {
+            display: none
+        }
+    </style>
+</head>
+<body>
+
+<h1>Rock Paper Scissors</h1>
+
+<div id='app' v-cloak>
+    <input v-model="playerName" placeholder="Enter your name">
+    <p>Player:  {{playerName}}</p>
+
+
+    <p id="lastRoundResult">Result:</p>
+    <p id="lastTheeRounds">Last Three Rounds Result:</p>
+    <ul>
+        <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
+    </ul>
+
+    <br />
+  
+    <input type="radio" id="rock" name="selection" value="rock" v-model="picked">
+    <label for="rock">Rock</label><br>
+    <input type="radio" id="paper" name="selection" value="paper" v-model="picked">
+    <label for="paper">Paper</label><br>
+    <input type="radio" id="scissors" name="selection" value="scissors" v-model="picked">
+    <label for="scissors">Scissors</label>
+ 
+    <br>
+    <span>Picked: {{ picked }}</span>
+    <span>Picked: {{ roundsResult }}</span>
+    <br />    
+    <br />
+    <button v-on:click='runGame2'>Compete2</button>
+</div>
+
+
+<p id="">Computer Selection:</p>
+<span id="compSelection"></span>
+
+<p id="result">Result:</p>
+ 
+
+<input type="radio" id="rock" name="selection" value="rock">
+<label for="rock">Rock</label><br>
+<input type="radio" id="paper" name="selection" value="paper">
+<label for="paper">Paper</label><br>
+<input type="radio" id="scissors" name="selection" value="scissors">
+<label for="scissors">Scissors</label>
+<div>
+<button id="runGame" type="button">Compete!</button>
+</div>
+</body>
+</html>
+  
