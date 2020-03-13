@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="e28week5.js" defer></script>
+    <style>
+        #wordToGuess {
+            font-family: monospace;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Word Scramble</h1>
+
+<div id="app" v-cloak> 
+
+    <div v-if='!gameStart'>
+        <label for="playerName">Enter your player name: </label> 
+        <input type="text" id="playerName" v-model.lazy="playerName">
+        <button v-on:click='startGame()' id="submitPlayerName" type="button">Let's play</button>
+    
+    </div>
+    <div v-else> 
+        <p id="welcome">Game on  {{playerName}} !</p>
+        <p id="wordLabel">Your mystery word is:</p><span id="wordToGuess"> {{ wordToGuessScrambled }} </span>
+        
+        <div id="hint"> <span id="guessHint"> {{ hintForGuess }} </span> 
+         </div>
+        <div>
+            <label for="guess">Your guess: </label> <input type="text" id="guess" v-model.lazy="userGuess"> <button v-on:click='checkGuess()' id="getWord" type="button">Submit Guess</button>
+        </div>
+    
+        <div v-if='correctGuess' id="correct">
+            <p id="correctText">Correct!</p> 
+        </div>
+        <div v-else id="wrong">
+            <p id="wrongText">Wrong!</p> 
+        </div>        
+    </div>
+
+    
+</div>
+
+</body>
+</html>
+  
