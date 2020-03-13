@@ -6,9 +6,10 @@ var scrambleGame = new Vue({
         el: '#app',
         data: { words: [
             ['apple', 'Sometimes red, sometimes delicious'],
-            ['washington', 'Rushmore’s left edge'],
-            ['pumpkin', 'Halloween’s favorite fruit'],
-            ['football', 'Play with your hands or feet, depending on your location']
+            ['washington', "Rushmore's left edge"],
+            ['pumpkin', "Halloween's favorite fruit"],
+            ['football', 'Play with your hands or feet, depending on your location'],
+            ['corona','Can be a drink, can be a deadly disease']
         ],
         result: false,
         wordToGuess: "",
@@ -18,6 +19,15 @@ var scrambleGame = new Vue({
         gameStart: false,
         userGuess: "",
         correctGuess: "",
+        gameRunning: false
+        },
+        computed: {
+          classResult: function() {
+            return {
+              resultTrue: this.correctGuess,
+              resultFalse: !this.correctGuess
+            }
+          }
         },
         methods: {
           rearrangeText: function(word) {
@@ -45,16 +55,20 @@ var scrambleGame = new Vue({
           } ,
           startGame: function() {
             this.gameStart = true;
+            this.gameRunning = false;
+            this.userGuess = "";
+            this.correctGuess = false;
             this.getWord();
           }, 
           checkGuess: function() {
+            this.gameRunning = true;
             if (this.userGuess ==  this.wordToGuess) {
               this.correctGuess = true;
-              console.log("Correct!!!!"); 
+             
 
             } else {
               this.correctGuess = false;
-              console.log("Idiot"); 
+               
             }
 
 

@@ -33,12 +33,15 @@
             <label for="guess">Your guess: </label> <input type="text" id="guess" v-model.lazy="userGuess"> <button v-on:click='checkGuess()' id="getWord" type="button">Submit Guess</button>
         </div>
     
-        <div v-if='correctGuess' id="correct">
-            <p id="correctText">Correct!</p> 
+        <div v-if='gameRunning' id="resultBox">
+            <div v-if='correctGuess' id="correct">
+                <p id="correctText">Correct!</p> 
+            </div>
+            <div v-if='!correctGuess' id="wrong">
+                <p id="wrongText">Wrong!</p> 
+            </div>  
         </div>
-        <div v-else id="wrong">
-            <p id="wrongText">Wrong!</p> 
-        </div>        
+      
     </div>
 
     

@@ -9,6 +9,28 @@
             font-family: monospace;
             font-size: xx-large;
         }
+        .resultTrue {
+            border: 2px solid green ;
+            background-color: greenyellow;
+        }
+        .resultFalse {
+            border: 2px solid red ;
+            background-color: red;
+        }
+        #resultBox{
+            display: inline-block;
+            margin: 10px;
+            font-size: larger;
+            color: white;
+        }
+        #guessHint {
+            font-style: italic;
+            font-size: medium;
+        }
+        #hint {
+            margin: 5px;
+        }
+        
     </style>
 </head>
 <body>
@@ -27,18 +49,24 @@
         <p id="welcome">Game on  {{playerName}} !</p>
         <p id="wordLabel">Your mystery word is:</p><span id="wordToGuess"> {{ wordToGuessScrambled }} </span>
         
-        <div id="hint"> <span id="guessHint"> {{ hintForGuess }} </span> 
+        <div id="hint"> 
+            <span id="wordLabel">Hint:</span> <span id="guessHint"> {{ hintForGuess }} </span> 
          </div>
         <div>
-            <label for="guess">Your guess: </label> <input type="text" id="guess" v-model.lazy="userGuess"> <button v-on:click='checkGuess()' id="getWord" type="button">Submit Guess</button>
+            <label for="guess">Your guess: </label> <input type="text" id="guess" v-model.lazy="userGuess" v-on:keyup.enter='checkGuess()' > 
+            <button v-if='!correctGuess' v-on:click='checkGuess()' id="getWord" type="button">Submit Guess</button>
         </div>
     
-        <div v-if='correctGuess' id="correct">
-            <p id="correctText">Correct!</p> 
-        </div>
-        <div v-else id="wrong">
-            <p id="wrongText">Wrong!</p> 
-        </div>        
+        <div v-if='gameRunning' id="resultBox" v-bind:class="classResult">
+            <div v-if='correctGuess' id="correct">
+                <p id="correctText">Correct! 
+                <button v-on:click='startGame()' id="getWord" type="button">Start New Game</button>
+            </p>
+            </div>
+            <div v-if='!correctGuess' id="wrong">
+                <p id="wrongText">Wrong!</p> 
+            </div>  
+        </div>       
     </div>
 
     
