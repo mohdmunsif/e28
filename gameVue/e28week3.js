@@ -1,3 +1,33 @@
+Vue.component('round-detail',{
+  data: function() {
+    return {
+      id:'',
+      removed: false,
+    }
+  },
+  template: '#round-detail',
+  methods: {
+    removeRound:function () {
+      this.removed = true
+    }
+  }
+})
+
+Vue.component('round-selection',{
+  data: function() {
+    return {
+      id:'',
+      removed: false,
+    }
+  },
+  template: '#round-selection',
+  methods: {
+    selectThis:function () {
+      console.log('Hahaha')
+    }
+  }
+})
+
 
 var app = new Vue({
   el: '#app',

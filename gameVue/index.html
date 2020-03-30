@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <script src="e28week3.js" defer></script>
-    <script type='text/x-template' id='round-details'>
-        
 
+    <script type='text/x-template' id='round-detail'>
+        <div>   
+            <ul>
+                <li>Round #: TBD</li>
+                <li>Winner: TBD</li>
+            </ul>    
+        </div>
     </script>
+
+    <script type='text/x-template' id='user-detail'>
+        <div>   
+            <input v-model="playerName" placeholder="Enter your name">
+            <p>Player:  {{playerName}}</p>
+        </div>
+    </script>
+
+
+    <script type='text/x-template' id='round-selection'>
+        <div id='wrapper'>
+            <div>   
+                <img src="paper.png" id='paper' class='imgSelection' v-on:click='selectThis()'>
+            </div>
+            <div>   
+                <img src="rock.png" id='rock' class='imgSelection'  v-on:click='selectThis()'>
+            </div>       
+            <div>   
+                <img src="scissors.png" id='scissors' class='imgSelection'  v-on:click='selectThis()'>
+            </div>      
+        </div>            
+    </script>
+
     <style>
         [v-cloak] {
             display: none
         }
+
+        #wrapper {
+        display: flex;
+        }
+        .imgSelection {
+            width: 50px;
+            margin: 10px;
+            flex: 1;
+            border-style: dashed;
+            border-width: 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -44,6 +83,9 @@
     <br />    
     <br />
     <button v-on:click='runGame2'>Compete2</button>
+
+    <round-selection></round-selection>
+    <round-detail></round-detail>
 </div>
 
 
@@ -52,16 +94,6 @@
 
 <p id="result">Result:</p>
  
-
-<input type="radio" id="rock" name="selection" value="rock">
-<label for="rock">Rock</label><br>
-<input type="radio" id="paper" name="selection" value="paper">
-<label for="paper">Paper</label><br>
-<input type="radio" id="scissors" name="selection" value="scissors">
-<label for="scissors">Scissors</label>
-<div>
-<button id="runGame" type="button">Compete!</button>
-</div>
 </body>
 </html>
   
