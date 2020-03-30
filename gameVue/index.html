@@ -5,11 +5,17 @@
     <script src="e28week3.js" defer></script>
 
     <script type='text/x-template' id='round-detail'>
-        <div>   
-            <ul>
-                <li>Round #: TBD</li>
-                <li>Winner: TBD</li>
-            </ul>    
+        <div id="wrapResult">
+            <div id='playerResultSel'>
+                <img src="paper.png" id='imgPlayerSel' class='roundSel'>     
+            </div>
+                <span> Player wins </span>
+            <div>
+            </div>
+            <div id='compResultSel'>
+                <img src="rock.png" id='imgCompSel' class='roundSel'> 
+            </div>
+   
         </div>
     </script>
 
@@ -22,7 +28,7 @@
 
 
     <script type='text/x-template' id='round-selection'>
-        <div id='wrapper'>
+        <div id='wrapperSelection'>
             <div>   
                 <img src="paper.png" id='paper' class='imgSelection' v-on:click='selectThis()'>
             </div>
@@ -40,7 +46,7 @@
             display: none
         }
 
-        #wrapper {
+        #wrapperSelection {
         display: flex;
         }
         .imgSelection {
@@ -49,6 +55,36 @@
             flex: 1;
             border-style: dashed;
             border-width: 2px;
+            background-color: cornflowerblue;
+            padding: 5px;
+            transition: 0.3s;
+            
+        }
+        .imgSelection:hover{
+            cursor: pointer;
+            background-color: crimson;
+        }
+        #wrapResult {
+            display: flex;
+            float: left;
+            flex-grow: 0;     /* do not grow   - initial value: 0 */
+            flex-shrink: 0;   /* do not shrink - initial value: 1 */
+            flex-basis: 25em; /* width/height  - initial value: auto */
+            border-style: dashed;
+            border-width: 2px;
+            background-color: rgb(71, 160, 148);
+            padding: 5px;
+            margin: 5px;
+        }
+        .roundSel{
+            width: 50px;
+            margin: 10px;
+        }
+        #imgPlayerSel {
+            transform: rotate(90deg);
+        }
+        #imgCompSel {
+            transform: rotate(270deg);
         }
 
     </style>
@@ -62,11 +98,6 @@
     <p>Player:  {{playerName}}</p>
 
 
-    <p id="lastRoundResult">Result:</p>
-    <p id="lastTheeRounds">Last Three Rounds Result:</p>
-    <ul>
-        <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
-    </ul>
 
     <br />
   
@@ -86,14 +117,23 @@
 
     <round-selection></round-selection>
     <round-detail></round-detail>
+    <round-detail></round-detail>
+    <round-detail></round-detail>
 </div>
 
+<div>
+    <p id="lastRoundResult">Result:</p>
+    <p id="lastTheeRounds">Last Three Rounds Result:</p>
+    <ul>
+        <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
+    </ul>
 
-<p id="">Computer Selection:</p>
-<span id="compSelection"></span>
+    <p id="">Computer Selection:</p>
+    <span id="compSelection"></span>
 
-<p id="result">Result:</p>
- 
+    <p id="result">Result:</p>
+</div>
+
 </body>
 </html>
   
