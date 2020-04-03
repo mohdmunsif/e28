@@ -1,3 +1,16 @@
+Vue.prototype.$choiceStack = ['paper', 'rock', 'scissors'];
+Vue.prototype.$results=[
+  ['t', 'c', 'u'],
+  ['u', 't', 'c'],
+  ['c', 'u', 't'],
+  ];
+
+  Vue.prototype.$resultMap={
+    't': "Tie",
+    'u': "You win",
+    'c': "You lose"
+    },
+
 Vue.component('round-detail',{
   data: function() {
     return {
@@ -19,23 +32,12 @@ Vue.component('current-round',{
   data: function() {
     return {
       id:'',
-      userChoice: '', 
-      choiceStack: ['paper', 'rock', 'scissors'],
-      userChoiceIndex: choiceStack.indexOf(userChoice),
-      compChoiceIndex: '',
-      compChoice: this.choiceStack[compChoiceIndex],
+      userChoice: 0, 
+      userChoiceIndex:0,
+      compChoiceIndex: 0,
+      compChoice: '',
       winner: '',
-      results: [
-        ['t', 'c', 'u'],
-        ['u', 't', 'c'],
-        ['c', 'u', 't'],
-        ],
-        shortRes: results[compChoiceIndex][userChoiceIndex],
-        resultMap: {
-          't': "Tie",
-          'u': "You win",
-          'c': "You lose"
-          },
+      shortRes: '',
       result:'' 
     }
   },
@@ -45,14 +47,32 @@ Vue.component('current-round',{
       var min = 0;
       var max = 3;
       this.compChoiceIndex = Math.floor(Math.random() * (+max - +min)) + +min;
+      this.compChoice = this.$choiceStack[this.compChoiceIndex];
     } ,
     getWinner:function () {
-      result = resultMap[shortRes];
-      console.log('Winner is: ' + this.winner + ' User:' + this.userChoice + ', Comp:' + this.compChoice )
+      this.shortRes = this.$results[this.compChoiceIndex][this.userChoiceIndex],
+      this.result = this.$resultMap[this.shortRes];
+      switch(this.shortRes) {
+        case 't':
+          this.winner = 'tie'
+          break;
+        case 'u':
+          this.winner = 'Computer'
+          break;
+        case 'c':  
+          this.winner = 'Player'
+          break;
+        default:
+          // code block
+      }
+      console.log('Winner is: ' + this.winner + ' User:' + this.userChoice + ' , Comp:' + this.compChoice + ', shortRes:' +  this.shortRes  )
+      console.log('Result' + this.result)
     },
     selectThis:function (userChoice) {
       this.userChoice = userChoice;
+      this.userChoiceIndex = this.$choiceStack.indexOf(this.userChoice),
       this.compSelection();
+      this.getWinner();
     }
 
   }
