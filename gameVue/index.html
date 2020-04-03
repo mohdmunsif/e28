@@ -7,13 +7,13 @@
     <script type='text/x-template' id='round-detail'>
         <div id="wrapResult">
             <div id='playerResultSel'>
-                <img src="paper.png" id='imgPlayerSel' class='roundSel'>     
+                <img v-bind:src="roundResult.userSelection + '.png'" id='imgPlayerSel' class='roundSel'>     
             </div>
-                <span> Player wins </span>
+                <span> {{ roundResult.winner }} wins </span>
             <div>
             </div>
             <div id='compResultSel'>
-                <img src="rock.png" id='imgCompSel' class='roundSel'> 
+                <img v-bind:src="roundResult.compSelection + '.png'" id='imgCompSel' class='roundSel'> 
             </div>
    
         </div>
@@ -22,21 +22,39 @@
     <script type='text/x-template' id='user-detail'>
         <div>   
             <input v-model="playerName" placeholder="Enter your name">
-            <p>Player:  {{playerName}}</p>
+            <p>Player:  {{playerName}} </p>
         </div>
     </script>
 
 
     <script type='text/x-template' id='round-selection'>
+        <div>   
+            <div id="wrapCurrRound">
+                <div id='playerResultSel'>
+                    <img src="paper.png" id='imgPlayerSel' class='roundSel'>     
+                </div>
+                    <span> {{ round.winner }}</span>
+                <div>
+                </div>
+                <div id='compResultSel'>
+                    <img src="rock.png" id='imgCompSel' class='roundSel'> 
+                </div>
+       
+            </div>
+        </div>
+    </script>
+
+
+    <script type='text/x-template' id='current-round'>
         <div id='wrapperSelection'>
             <div>   
-                <img src="paper.png" id='paper' class='imgSelection' v-on:click='selectThis()'>
+                <img src="paper.png" id='paper' class='imgSelection' v-on:click="selectThis('paper')">
             </div>
             <div>   
-                <img src="rock.png" id='rock' class='imgSelection'  v-on:click='selectThis()'>
+                <img src="rock.png" id='rock' class='imgSelection'  v-on:click="selectThis('rock')">
             </div>       
             <div>   
-                <img src="scissors.png" id='scissors' class='imgSelection'  v-on:click='selectThis()'>
+                <img src="scissors.png" id='scissors' class='imgSelection' v-on:click="selectThis('scissors')">
             </div>      
         </div>            
     </script>
@@ -93,46 +111,32 @@
 
 <h1>Rock Paper Scissors</h1>
 
+
 <div id='app' v-cloak>
-    <input v-model="playerName" placeholder="Enter your name">
-    <p>Player:  {{playerName}}</p>
 
 
+    <div v-if='!gameStart'>
+        <label for="playerName">Enter your player name: </label> 
+        <input type="text" id="playerName" v-model.lazy="playerName">
+        <button v-on:click='startGame()' id="submitPlayerName" type="button">Let's play</button>
+    
+    </div>
+    <div v-else> 
 
-    <br />
-  
-    <input type="radio" id="rock" name="selection" value="rock" v-model="picked">
-    <label for="rock">Rock</label><br>
-    <input type="radio" id="paper" name="selection" value="paper" v-model="picked">
-    <label for="paper">Paper</label><br>
-    <input type="radio" id="scissors" name="selection" value="scissors" v-model="picked">
-    <label for="scissors">Scissors</label>
+        <p id="welcome">Game on {{playerName}} !</p>
+
+        <h1>Choose your weapon for this round:</h1>
+
+        <current-round></current-round>
+
+        <p id="lastTheeRounds">Last Three Rounds Result:</p>
+
+        <round-detail v-for='roundResult in roundResults'> </round-detail>
  
-    <br>
-    <span>Picked: {{ picked }}</span>
-    <span>Picked: {{ roundsResult }}</span>
-    <br />    
-    <br />
-    <button v-on:click='runGame2'>Compete2</button>
-
-    <round-selection></round-selection>
-    <round-detail></round-detail>
-    <round-detail></round-detail>
-    <round-detail></round-detail>
+    </div>
 </div>
 
-<div>
-    <p id="lastRoundResult">Result:</p>
-    <p id="lastTheeRounds">Last Three Rounds Result:</p>
-    <ul>
-        <li v-for='thisGuess in guesses'>{{ thisGuess }}</li>
-    </ul>
 
-    <p id="">Computer Selection:</p>
-    <span id="compSelection"></span>
-
-    <p id="result">Result:</p>
-</div>
 
 </body>
 </html>
