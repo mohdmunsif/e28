@@ -7,13 +7,13 @@
     <script type='text/x-template' id='round-detail'>
         <div id="wrapResult">
             <div id='playerResultSel'>
-                <img v-bind:src="roundResult.userSelection + '.png'" id='imgPlayerSel' class='roundSel'>     
+                <img v-bind:src="roundResult.userChoice + '.png'" id='imgPlayerSel' class='roundSel'>     
             </div>
                 <span> {{ roundResult.winner }} wins </span>
             <div>
             </div>
             <div id='compResultSel'>
-                <img v-bind:src="roundResult.compSelection + '.png'" id='imgCompSel' class='roundSel'> 
+                <img v-bind:src="roundResult.compChoice + '.png'" id='imgCompSel' class='roundSel'> 
             </div>
    
         </div>

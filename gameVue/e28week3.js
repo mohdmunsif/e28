@@ -15,7 +15,13 @@ Vue.component('round-detail',{
   data: function() {
     return {
       id:'',
-      removed: false,
+      userChoice: '', 
+      userChoiceIndex:0,
+      compChoiceIndex: 0,
+      compChoice: '',
+      winner: '',
+      shortRes: '',
+      result:'' 
     }
   },
   template: '#round-detail',
@@ -32,7 +38,7 @@ Vue.component('current-round',{
   data: function() {
     return {
       id:'',
-      userChoice: 0, 
+      userChoice: '', 
       userChoiceIndex:0,
       compChoiceIndex: 0,
       compChoice: '',
@@ -111,6 +117,16 @@ var app = new Vue({
   methods: {
     startGame: function() {
       this.gameStart = true;
+      this.roundResults.push({
+        id: '1', 
+        userChoice:'rock',
+        compChoice:'scissors',
+        winner:'user'});
+        this.roundResults.push({
+          id: '2', 
+          userChoice:'paper',
+          compChoice:'paper',
+          winner:'tie'} );  
     }
   }
 });
