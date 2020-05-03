@@ -2,11 +2,13 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/zipfoods-logo.png" id="logo">
 
-
-      <show-home></show-home>
-      <show-featured :category='"snacks"'></show-featured>
-      <show-products></show-products>
-      <show-categories></show-categories>
+    <nav>
+        <ul>
+            <li v-for= 'link in links' :key='link'>
+              <router-link v-bind:to='link' exact> {{ link }}</router-link>
+            </li>
+        </ul>
+    </nav>
 
       <router-view></router-view>
 
@@ -16,23 +18,22 @@
 <script>
 
 import { products } from './products.js'; 
-import ShowProducts from './components/ShowProducts.vue'; 
-import ShowCategories from './components/ShowCategories.vue';
-import ShowHome from './components/ShowHome.vue';
-
-
+ 
  
 export default {
   name: 'App',
   components: {
-    'show-products': ShowProducts,
-    'show-categories': ShowCategories,
-    'show-home': ShowHome,    
  
   },
   data: function() {
     return {
-      products: products
+      products: products,
+      links: ['home', 'products','categories'],
+      // paths: {
+      //   home: '/',
+      //   products: '/products',
+      //   categories: '/categories'
+      // }
     };
   }
 }
