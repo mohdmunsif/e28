@@ -31,65 +31,11 @@
     },
     {
       "id": 4,
-      "subject": "Gold Medal All Purpose Flour",
-      "entry": "All-purpose bleached flour is great for just about everything but doesn t add any color. It s perfect for baked goods like white sandwich bread and cake.",
+      "subject": "Fourth Blog post",
+      "entry": "Pharetra vel turpis nunc eget. Massa tempor nec feugiat nisl pretium. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Pellentesque nec nam aliquam sem et. Feugiat in ante metus dictum. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique. Sagittis purus sit amet volutpat. Duis ultricies lacus sed turpis tincidunt. Auctor eu augue ut lectus arcu. In hac habitasse platea dictumst quisque sagittis purus. Mauris vitae ultricies leo integer malesuada nunc vel. Diam in arcu cursus euismod quis viverra nibh cras. Congue nisi vitae suscipit tellus. Ornare suspendisse sed nisi lacus. Feugiat sed lectus vestibulum mattis ullamcorper velit. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Ut aliquam purus sit amet luctus venenatis lectus magna. Mollis nunc sed id semper risus in hendrerit gravida. Cursus sit amet dictum sit amet.",
       "author": "Munsif",
       "categories": [
         "memories"
       ]
-    },
-    {
-      "id": 5,
-      "subject": "Honey Nut Cheerios",
-      "entry": "You already know that Honey Nut Cheerios Naturally Flavored has the irresistible taste of golden honey, making it a family favorite. Something that everyone can smile about! ",
-      "author": "Munsif",
-      "categories": [
-        "funny"
-      ]
-    },
-    {
-      "id": 6,
-      "subject": "Eggo Nutri-Grain Whole Wheat Waffles",
-      "entry": "Eggo® Nutri-Grain® waffles made with whole wheat have the same light and crispy texture as our original Eggo® Waffles, only with the added bonus of nutritious whole grain! ",
-      "author": "Munsif",
-      "categories": [
-        "memories"
-      ]
-    },
-    {
-      "id": 7,
-      "subject": "Amy s Cheese Pizza",
-      "entry": "The classic favorite, made with our savory pizza sauce and grated part-skim mozzarella cheese.",
-      "author": "Munsif",
-      "categories": [
-        "memories"
-      ]
-    },
-    {
-      "id": 8,
-      "subject": "Birds Eye Steamfresh Fresh Frozen Vegetable Mix",
-      "entry": "Delicious Birds Eye vegetables in blends that are just right for side dishes and your recipes.",
-      "author": "Munsif",
-      "categories": [
-        "musings"
-      ]
-    },
-    {
-      "id": 9,
-      "subject": "Bare Coconut Chips",
-      "entry": "Simply made with coconuts, cane sugar, and sea salt.",
-      "author": "Munsif",
-      "categories": [
-        "musings"
-      ]
-    },
-    {
-      "id": 10,
-      "subject": "Snapple Peach Tea",
-      "entry": "To Peach their own. Smooth Snapple tea, perfect peach flavor. We made it just for you from the Best Stuff on Earth.",
-      "author": "Munsif",
-      "categories": [
-        "musings"
-      ]
-    }
+    } 
   ]
