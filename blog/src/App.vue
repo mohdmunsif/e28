@@ -1,17 +1,33 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+ 
+        <nav>
+        <ul>
+            <li v-for= 'link in links' :key='link'>
+              <router-link v-bind:to='link' exact> {{ link }}</router-link>
+            </li>
+        </ul>
+    </nav>
+
+    <router-view></router-view>
+
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script>  
+ 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+ 
+  },
+  data: function() {
+    return {
+      posts: [],
+      links: ['home', 'posts','categories'],
+ 
+    }
   }
 }
 </script>
