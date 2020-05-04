@@ -1,95 +1,41 @@
 [
     {
-      'id': 1,
-      'subject': 'This is a blog post',
-      'entry': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Quisque non tellus orci ac auctor augue. Sodales ut etiam sit amet nisl purus. Lorem mollis aliquam ut porttitor leo. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Vivamus at augue eget arcu dictum varius duis at consectetur. Massa enim nec dui nunc mattis enim ut tellus elementum. Neque convallis a cras semper auctor neque. Netus et malesuada fames ac turpis egestas maecenas. Platea dictumst quisque sagittis purus.',
-      'author': 'Munsif',
-      'categories': [
-        'musings',
-        'funny'
+      "id": 1,
+      "subject": "This is a blog post",
+      "entry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Quisque non tellus orci ac auctor augue. Sodales ut etiam sit amet nisl purus. Lorem mollis aliquam ut porttitor leo. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Vivamus at augue eget arcu dictum varius duis at consectetur. Massa enim nec dui nunc mattis enim ut tellus elementum. Neque convallis a cras semper auctor neque. Netus et malesuada fames ac turpis egestas maecenas. Platea dictumst quisque sagittis purus.",
+      "author": "Munsif",
+      "categories": [
+        "musings",
+        "funny"
       ]
     },
     {
-      'id': 2,
-      'subject': 'Second blog post',
-      'entry': 'Non arcu risus quis varius quam quisque. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Morbi quis commodo odio aenean sed. Quam id leo in vitae. Id cursus metus aliquam eleifend. Sed ullamcorper morbi tincidunt ornare massa eget. Suscipit tellus mauris a diam maecenas. Integer vitae justo eget magna. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Neque laoreet suspendisse interdum consectetur libero id. Praesent semper feugiat nibh sed pulvinar. Ridiculus mus mauris vitae ultricies leo integer malesuada. Id velit ut tortor pretium viverra suspendisse potenti nullam ac.',
-      'author': 'Munsif',
-      'categories': [
-        'memories',
-        'funny'
+      "id": 2,
+      "subject": "Second blog post",
+      "entry": "Non arcu risus quis varius quam quisque. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Morbi quis commodo odio aenean sed. Quam id leo in vitae. Id cursus metus aliquam eleifend. Sed ullamcorper morbi tincidunt ornare massa eget. Suscipit tellus mauris a diam maecenas. Integer vitae justo eget magna. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Neque laoreet suspendisse interdum consectetur libero id. Praesent semper feugiat nibh sed pulvinar. Ridiculus mus mauris vitae ultricies leo integer malesuada. Id velit ut tortor pretium viverra suspendisse potenti nullam ac.",
+      "author": "Munsif",
+      "categories": [
+        "memories",
+        "funny"
       ]
     },
     {
-      'id': 3,
-      'subject': '3rd blog post',
-      'entry': 'Pharetra vel turpis nunc eget. Massa tempor nec feugiat nisl pretium. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Pellentesque nec nam aliquam sem et. Feugiat in ante metus dictum. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique. Sagittis purus sit amet volutpat. Duis ultricies lacus sed turpis tincidunt. Auctor eu augue ut lectus arcu. In hac habitasse platea dictumst quisque sagittis purus. Mauris vitae ultricies leo integer malesuada nunc vel. Diam in arcu cursus euismod quis viverra nibh cras. Congue nisi vitae suscipit tellus. Ornare suspendisse sed nisi lacus. Feugiat sed lectus vestibulum mattis ullamcorper velit. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Ut aliquam purus sit amet luctus venenatis lectus magna. Mollis nunc sed id semper risus in hendrerit gravida. Cursus sit amet dictum sit amet.',
-      'author': 'Munsif',
-      'categories': [
-        'memories',
-        'funny'
+      "id": 3,
+      "subject": "3rd blog post",
+      "entry": "Pharetra vel turpis nunc eget. Massa tempor nec feugiat nisl pretium. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Pellentesque nec nam aliquam sem et. Feugiat in ante metus dictum. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique. Sagittis purus sit amet volutpat. Duis ultricies lacus sed turpis tincidunt. Auctor eu augue ut lectus arcu. In hac habitasse platea dictumst quisque sagittis purus. Mauris vitae ultricies leo integer malesuada nunc vel. Diam in arcu cursus euismod quis viverra nibh cras. Congue nisi vitae suscipit tellus. Ornare suspendisse sed nisi lacus. Feugiat sed lectus vestibulum mattis ullamcorper velit. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Ut aliquam purus sit amet luctus venenatis lectus magna. Mollis nunc sed id semper risus in hendrerit gravida. Cursus sit amet dictum sit amet.",
+      "author": "Munsif",
+      "categories": [
+        "memories",
+        "funny"
       ]
     },
     {
-      'id': 4,
-      'subject': 'Gold Medal All Purpose Flour',
-      'entry': 'All-purpose bleached flour is great for just about everything but doesn t add any color. It s perfect for baked goods like white sandwich bread and cake.',
-      'author': 'Munsif',
-      'categories': [
-        'memories'
+      "id": 4,
+      "subject": "Fourth Blog post",
+      "entry": "Pharetra vel turpis nunc eget. Massa tempor nec feugiat nisl pretium. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Pellentesque nec nam aliquam sem et. Feugiat in ante metus dictum. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique. Sagittis purus sit amet volutpat. Duis ultricies lacus sed turpis tincidunt. Auctor eu augue ut lectus arcu. In hac habitasse platea dictumst quisque sagittis purus. Mauris vitae ultricies leo integer malesuada nunc vel. Diam in arcu cursus euismod quis viverra nibh cras. Congue nisi vitae suscipit tellus. Ornare suspendisse sed nisi lacus. Feugiat sed lectus vestibulum mattis ullamcorper velit. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Ut aliquam purus sit amet luctus venenatis lectus magna. Mollis nunc sed id semper risus in hendrerit gravida. Cursus sit amet dictum sit amet.",
+      "author": "Munsif",
+      "categories": [
+        "memories"
       ]
-    },
-    {
-      'id': 5,
-      'subject': 'Honey Nut Cheerios',
-      'entry': 'You already know that Honey Nut Cheerios Naturally Flavored has the irresistible taste of golden honey, making it a family favorite. Something that everyone can smile about! ',
-      'author': 'Munsif',
-      'categories': [
-        'funny'
-      ]
-    },
-    {
-      'id': 6,
-      'subject': 'Eggo Nutri-Grain Whole Wheat Waffles',
-      'entry': 'Eggo® Nutri-Grain® waffles made with whole wheat have the same light and crispy texture as our original Eggo® Waffles, only with the added bonus of nutritious whole grain! ',
-      'author': 'Munsif',
-      'categories': [
-        'memories'
-      ]
-    },
-    {
-      'id': 7,
-      'subject': 'Amy s Cheese Pizza',
-      'entry': 'The classic favorite, made with our savory pizza sauce and grated part-skim mozzarella cheese.',
-      'author': 'Munsif',
-      'categories': [
-        'memories'
-      ]
-    },
-    {
-      'id': 8,
-      'subject': 'Birds Eye Steamfresh Fresh Frozen Vegetable Mix',
-      'entry': 'Delicious Birds Eye vegetables in blends that are just right for side dishes and your recipes.',
-      'author': 'Munsif',
-      'categories': [
-        'musings'
-      ]
-    },
-    {
-      'id': 9,
-      'subject': 'Bare Coconut Chips',
-      'entry': 'Simply made with coconuts, cane sugar, and sea salt.',
-      'author': 'Munsif',
-      'categories': [
-        'musings'
-      ]
-    },
-    {
-      'id': 10,
-      'subject': 'Snapple Peach Tea',
-      'entry': 'To Peach their own. Smooth Snapple tea, perfect peach flavor. We made it just for you from the Best Stuff on Earth.',
-      'author': 'Munsif',
-      'categories': [
-        'musings'
-      ]
-    }
+    } 
   ]
