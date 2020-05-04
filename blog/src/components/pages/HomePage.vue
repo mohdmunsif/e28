@@ -2,7 +2,7 @@
   <div>
     <p>
       Gossiping of a Vue programmer.
-      </p>
+    </p>
  
   </div>
 </template>

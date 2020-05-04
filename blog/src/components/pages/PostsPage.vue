@@ -27,15 +27,18 @@ export default {
     mounted() {
     this.posts = axios
         .get(
-            'https://my-json-server.typicode.com/susanBuck/e28-zipfoods-api/products'
+            'https://my-json-server.typicode.com/mohdmunsif/e28-blog-api/entries'
         )
         .then(response => {
             this.posts = response.data;
         });
-}
+    }
 
 };
 </script>
 
 <style scoped>
+
+
+
 </style>
