@@ -9,7 +9,7 @@ npm install axios
 ```
 
 ## Domain
-[blog.mohdmunsif.me](blog.mohdmunsif.me)
+[blog.mohdmunsif.me](http://blog.mohdmunsif.me)
 
 which is pointing to
 
