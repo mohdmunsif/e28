@@ -1,18 +1,57 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+ 
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script> 
+import * as firebase from 'firebase/app'
 
+import 'firebase/firestore';
+ 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+     
+  },
+  data: function() {
+    return {
+      links: ['home','entries','categories','favorites']
+    }
+  },
+  mounted: function() {
+        // Initialize firebase
+    let projectId = 'e28-blog-p3';
+    firebase.initializeApp({
+        apiKey: 'AIzaSyAqAho2z7JxQkAukKGv7yRlFZDCD06RVBY',
+        authDomain: projectId + '.firebaseapp.com',
+        databaseURL: 'https://' + projectId + '.firebaseio.com',
+        projectId: projectId,
+    });
+
+    // Initialize firestore
+    let api = firebase.firestore();
+    
+
+      api.collection('entries').add({
+      author: 'munsif',
+      category: ['funny', 'sad'],
+      date: '',
+      title: 'This is a new blog entry',
+      description: 'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
+      categories: ['produce', 'fruits']
+      })
+      .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+          console.error("Error adding document: ", error);
+      });
+
+    }
+
 }
 </script>
 
