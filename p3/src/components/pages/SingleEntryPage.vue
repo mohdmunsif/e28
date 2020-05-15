@@ -1,7 +1,9 @@
 <template>
-    <router-link :to='{name: "oneentry", params: {slug: entry.slug}}'>
+
     <div class='entry'>
-        <h1 class='entry-title'>{{ entry.title }}</h1>
+        <router-link :to='{name: "oneentry", params: {slug: entry.slug}}'>
+            <h1 class='entry-title'>{{ entry.title }}</h1>
+        </router-link>
          <p class='entry-description'>{{ entry.description }}</p>
          <p class='entry-author'> By: {{ entry.author}} </p>
  
@@ -17,7 +19,7 @@
         </transition>
 
     </div>
-    </router-link>
+
 </template>
 
 
@@ -31,12 +33,7 @@ export default {
             addAlert: false
         };
     },
-    // computed: {
-    //     entry() {
-    //         return this.$store.getters.getEntryById(this.id);
-    //     },
- 
-    // },
+
     methods: {
         addToFavs: function(id) {
             let favs = new app.Favorite();

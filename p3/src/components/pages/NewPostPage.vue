@@ -110,7 +110,7 @@ export default {
                   else {
                     console.log(response);
                     this.added =  true;
-                    this.$v.$reset();
+                    // this.$v.$reset();
                   }
               } )
 

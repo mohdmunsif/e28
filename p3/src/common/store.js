@@ -25,9 +25,6 @@ export default new Vuex.Store({
         },
         setEntries(state, payload) {
             state.entries = payload;
-        },    
-        setUser(state, payload) {
-            state.user = payload;
         }
     },
     // Actions - Methods used to asynchronously change the store, committing the changes via mutations.
