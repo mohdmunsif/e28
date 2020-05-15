@@ -143,6 +143,8 @@ export default class Api {
      * Add a document to a collection
      */
     async add(collection, document) {
+        console.log("adding collection")
+        console.log(collection)        
         try {
             const docRef = await this.api
                 .collection(collection)

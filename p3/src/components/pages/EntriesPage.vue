@@ -3,15 +3,17 @@
         <h2>All Blog Posts</h2>
         <single-entry
             v-for='entry in entries'
-            :key='entry.id'
+            :key='entry.slug'
             :entry='entry'
         ></single-entry>
     </div>
 </template>
 
 <script>
+// import * as app from '@/common/app.js'
+
 import SingleEntryPage from './SingleEntryPage.vue';
-// const axios = require('axios');
+ 
  
 export default {
     name: '',
@@ -20,17 +22,14 @@ export default {
     },
     props: [ ],
     data: function()   {
-        return { entries: []  } ;
+        return {   } ;
     },
-    mounted() {
-    // this.entries = axios
-    //     .get(
-    //         'https://my-json-server.typicode.com/mohdmunsif/e28-blog-api/entries'
-    //     )
-    //     .then(response => {
-    //         this.entries = response.data;
-    //     });
-    }
+    computed: {
+        entries: function() {
+            return this.$store.state.entries;
+        }
+    }    
+
 };
 </script>
 

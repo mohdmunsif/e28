@@ -8,48 +8,18 @@
             <input type='text' v-model='$v.entries.title.$model'  id='name' />
           </div>
 
-            <div v-if='$v.entries.title.$error'>
-                <div
-                    class='form-feedback-error'
-                    v-if='!$v.entries.slug.required'
-                >Title is required.</div>
- 
-            </div>          
-
           <div class='form-group'>  
-            <label for='slug'>Slugs:</label>
-            <input type='text' v-model='$v.entries.slug.$model' id='slug'
+            <label for='slugs'>Slugs:</label>
+            <input type='text' v-model='$v.entries.slugs.$model' id='slugs'
             :class='{ "form-group has-error has-feedback": $v.entries.slug.$error }'
              />
           </div>
 
-            <div v-if='$v.entries.slug.$error'>
-                <div
-                    class='form-feedback-error'
-                    v-if='!$v.entries.slug.required'
-                >URL identifier is required.</div>
-
-                <div
-                    class='form-feedback-error'
-                    v-if='!$v.entries.slug.minLength'
-                >URL identifier must be at least 4 characters long.</div>
- 
-            </div>
-
           <div class='form-group'>
             <label for='description'>Entry</label>
-            <textarea class='form-control' v-model='entries.description' id='description' rows='3'>
+            <textarea class='form-control' v-model='$v.entries.description.$model' id='description' rows='3'>
             </textarea>
           </div>
-
-
-            <div v-if='$v.entries.description.$error'>
-                <div
-                    class='form-feedback-error'
-                    v-if='!$v.entries.description.required'
-                >Entry is required.</div>
- 
-            </div>             
 
           <div class='form-group'>
           <label for='date'>Date:</label>
@@ -86,7 +56,7 @@ export default {
       added: false,  
       entries:  {
           author: '',
-          slug: '',
+          slugs: '',
           date: '',
           title: '',
           description: ' ',
@@ -96,26 +66,15 @@ export default {
   },
   methods: {
     addEntry: function() {
-
-            // Invoke this touch method to force the validation system to register errors even if the user hasn't interacted with any of the fields yet.
-            this.$v.$touch();
-
-            // Only add the product if we don't have any errors
-            if (this.$v.$anyError == false) {
-
-              app.api.add('entries', this.entries).then(response => {
-                  if (response.includes('Error')) {
-                      alert(response);
-                  }
-                  else {
-                    console.log(response);
-                    this.added =  true;
-                    this.$v.$reset();
-                  }
-              } )
-
-            }
-      
+      app.api.add('entries', this.entries).then(response => {
+          if (response.includes('Error')) {
+              alert(response);
+          }
+           else {
+             console.log(response);
+            this.added =  true;
+           }
+      } )
     } 
   },
   validations: {

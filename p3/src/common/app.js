@@ -1,4 +1,6 @@
 import Api from '@/common/api.js';
+
+export { default as Favorite } from '@/common/Favorite.js';
  
 export const config = {
     firebase: {
@@ -8,7 +10,7 @@ export const config = {
 }
 
 /* eslint-disable */
-console.log(process.env.VUE_APP_FIREBASE_PROJECT_ID);
+// console.log(process.env.VUE_APP_FIREBASE_PROJECT_ID);
 /* eslint-enable */
 
 export const api = new Api({
